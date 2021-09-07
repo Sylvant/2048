@@ -28,6 +28,67 @@ h1 {
   color: inherit;
 }
 
+a {
+  min-width: 124px;
+  min-height: 50px;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  color: $secondBackground;
+  &:hover, &:focus {
+    color: white;
+    svg {
+      fill: white;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background-color: $fontColor;
+  }
+}
+
+svg {
+  fill: $secondBackground;
+  margin-right: .4em;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: $fontColor;
+  color: $secondBackground;
+  padding: 0 1em 0 1em;
+  div {
+    display: flex;
+    min-width: 124px;
+    min-height: 50px;
+  }
+}
+
+@media (max-height: 700px) {
+  footer {
+    position: initial;
+  }
+}
+@media (max-width: 560px) {
+  footer {
+    justify-content: space-evenly;
+    >*{
+      flex-basis: 35%;
+      justify-content: flex-start;
+    }
+  }
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   color: $fontColor;
